@@ -76,18 +76,12 @@ initial_theta = zeros(n+1,1);
 %Compute Cost and Display Cost and Gradient
 [cost,grad] = costFunction(initial_theta,X,y);
 
-%fminunc part
-%  In this exercise, you will use a built-in function (fminunc) to find the
-%  optimal parameters theta.
 
-%  Set options for fminunc
 options = optimset('GradObj', 'on', 'MaxIter', 400);
-
-%  Run fminunc to obtain the optimal theta
-%  This function will return theta and the cost 
+ 
 [theta, cost] = ...
 	fminunc(@(t)(costFunction(t, X, y)), initial_theta, options);
-%fminunc part ends
+
 
 
 %Confustion Matrix
